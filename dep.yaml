@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anshul      
+  labels:
+    app: django-blog
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: django-blog
+
+  template:
+    metadata:
+      labels:
+        app: django-blog
+    spec:
+      containers:
+      - name: anshul
+        image: anshul9999/anshulrepo:2.1
+        ports:
+        - containerPort: 8000
